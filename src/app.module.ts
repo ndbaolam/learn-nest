@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { GoogleModule } from './google/google.module';
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       database: 'test',
       autoLoadEntities: true,
       synchronize: true,
-    }),  
+    }),
+    GoogleModule,  
   ],
 })
 export class AppModule implements NestModule {
